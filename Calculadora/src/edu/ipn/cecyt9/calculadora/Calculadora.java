@@ -190,6 +190,7 @@ public class Calculadora extends JFrame {
 		} else if (operacion.equals("*")) {
 			resultado *= new Double(pantalla.getText());
 		}
+                System.out.println("Cambio");
 
 		pantalla.setText("" + resultado);
 		operacion = "";

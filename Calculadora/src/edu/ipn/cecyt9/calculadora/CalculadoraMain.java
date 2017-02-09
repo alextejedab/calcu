@@ -15,8 +15,12 @@ package edu.ipn.cecyt9.calculadora;
  * @date: 06-09-2015 
  */
 public class CalculadoraMain {
+    // author: tbracho
+    
+    
  public static void main(String[] args) {
 		Calculadora calculadora = new Calculadora();
 		calculadora.setVisible(true);
+                System.out.println("Cambio");
 	}   
 }
