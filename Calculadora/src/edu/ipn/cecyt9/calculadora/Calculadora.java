@@ -50,7 +50,7 @@ public class Calculadora extends JFrame {
 	 */
 	public Calculadora() {
 		super();
-		setSize(250, 300);
+		setSize(500, 500);
 		setTitle("Calculadora Simple");
 		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setResizable(false);
@@ -88,6 +88,11 @@ public class Calculadora extends JFrame {
 		nuevoBotonOperacion("*");
 		nuevoBotonOperacion("/");
 		nuevoBotonOperacion("=");
+                nuevoBotonOperacion("%");
+                nuevoBotonOperacion("sin");
+                nuevoBotonOperacion("cos");
+                nuevoBotonOperacion("tan");
+                nuevoBotonOperacion("^");
 		nuevoBotonOperacion("CE");
 
 		panel.add("East", panelOperaciones);
@@ -189,7 +194,17 @@ public class Calculadora extends JFrame {
 			resultado /= new Double(pantalla.getText());
 		} else if (operacion.equals("*")) {
 			resultado *= new Double(pantalla.getText());
-		}
+		} else if (operacion.equals("sin")){
+                        resultado = Math.sin(Math.toRadians(resultado));
+                } else if (operacion.equals("cos")){
+                        resultado = Math.cos(Math.toRadians(resultado));
+                } else if (operacion.equals("tan")){
+                        resultado = Math.tan(Math.toRadians(resultado));
+                } else if (operacion.equals("%")){
+                        resultado %= new Double(pantalla.getText());
+                } else if (operacion.equals("^")){
+                        resultado = Math.pow(resultado, new Double(pantalla.getText()));
+                }
                 System.out.println("Cambio");
 
 		pantalla.setText("" + resultado);
